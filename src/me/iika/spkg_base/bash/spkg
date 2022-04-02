@@ -1,0 +1,14 @@
+#!/bin/bash
+
+count=10
+if [ -d /usr/local/git ] || [ -f /usr/bin/git ]
+then
+  echo "test"
+elif [ -f /usr/local/bin/brew ]
+then
+  /usr/local/bin/brew install git
+else
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
+
+/usr/bin/git clone
